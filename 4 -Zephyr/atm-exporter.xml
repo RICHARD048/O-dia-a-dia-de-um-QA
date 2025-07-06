@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <projectId>10033</projectId>
+    <projectKey>SWDIO</projectKey>
+    <exportDate>2025-07-06 03:40:41 UTC</exportDate>
+    <folders/>
+    <testCases>
+        <testCase id="246714529" key="SWDIO-T1">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Richard Gómez Arcos</createdBy>
+            <createdOn>2025-07-06 03:12:57 UTC</createdOn>
+            <customFields/>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Verificar la visibilidad del botón "Adicionar ao carrinho"]]></name>
+            <owner>712020:c91fa2e2-ae6e-4d25-bb09-48a9d0c43336</owner>
+            <precondition><![CDATA[<ul><li id="isPasted">O usu&aacute;rio deve estar na p&aacute;gina do cat&aacute;logo de produtos.</li><li>Devem existir produtos vis&iacute;veis no cat&aacute;logo.</li></ul>]]></precondition>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Draft]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="steps">
+                <steps>
+                    <step index="0">
+                        <customFields/>
+                        <description><![CDATA[Navegar para a p&aacute;gina do cat&aacute;logo.]]></description>
+                        <expectedResult><![CDATA[A p&aacute;gina carrega corretamente, exibindo os produtos.<br><br>]]></expectedResult>
+                    </step>
+                    <step index="1">
+                        <customFields/>
+                        <description><![CDATA[Observar qualquer card de produto.]]></description>
+                        <expectedResult><![CDATA[Em cada card de produto, um bot&atilde;o com o texto exato &quot;Adicionar ao carrinho&quot; est&aacute; vis&iacute;vel e habilitado.]]></expectedResult>
+                    </step>
+                </steps>
+            </testScript>
+        </testCase>
+        <testCase id="246714578" key="SWDIO-T2">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Richard Gómez Arcos</createdBy>
+            <createdOn>2025-07-06 03:15:14 UTC</createdOn>
+            <customFields/>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Adicionar um produto ao carrinho e verificar a atualização]]></name>
+            <owner>712020:c91fa2e2-ae6e-4d25-bb09-48a9d0c43336</owner>
+            <precondition><![CDATA[<ul><li id="isPasted">O usu&aacute;rio est&aacute; na p&aacute;gina do cat&aacute;logo.</li><li>O carrinho de compras est&aacute; inicialmente vazio (o contador do &iacute;cone exibe &quot;0&quot; ou est&aacute; oculto).</li></ul>]]></precondition>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Draft]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="steps">
+                <steps>
+                    <step index="0">
+                        <customFields/>
+                        <description><![CDATA[Registrar o n&uacute;mero exibido no &iacute;cone do carrinho (deve ser 0).]]></description>
+                        <expectedResult><![CDATA[]]></expectedResult>
+                    </step>
+                    <step index="1">
+                        <customFields/>
+                        <description><![CDATA[Clicar no bot&atilde;o &quot;Adicionar ao carrinho&quot; de um produto espec&iacute;fico (ex: &quot;Produto A&quot;).]]></description>
+                        <expectedResult><![CDATA[O texto do bot&atilde;o do &quot;Produto A&quot; muda de &quot;Adicionar ao carrinho&quot; para &quot;Remover&quot;.]]></expectedResult>
+                    </step>
+                    <step index="2">
+                        <customFields/>
+                        <description><![CDATA[Observar o &iacute;cone do carrinho no cabe&ccedil;alho da p&aacute;gina.]]></description>
+                        <expectedResult><![CDATA[O contador do &iacute;cone do carrinho &eacute; atualizado e agora exibe &quot;1&quot;.]]></expectedResult>
+                    </step>
+                    <step index="3">
+                        <customFields/>
+                        <description><![CDATA[Observar o bot&atilde;o do &quot;Produto A&quot; que acabou de ser adicionado.]]></description>
+                    </step>
+                </steps>
+            </testScript>
+        </testCase>
+        <testCase id="246714587" key="SWDIO-T3">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Richard Gómez Arcos</createdBy>
+            <createdOn>2025-07-06 03:17:25 UTC</createdOn>
+            <customFields/>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Remover um produto do carrinho e verificar a atualização]]></name>
+            <owner>712020:c91fa2e2-ae6e-4d25-bb09-48a9d0c43336</owner>
+            <precondition><![CDATA[<ul><li>O usu&aacute;rio adicionou exatamente um produto ao carrinho a partir da p&aacute;gina do cat&aacute;logo (o contador do &iacute;cone exibe &quot;1&quot;).</li></ul>]]></precondition>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Draft]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="bdd">
+                <details><![CDATA[Remover um item do carrinho a partir da página do catálogo
+        
+              Dado que eu adicionei o "Produto A" ao carrinho a partir da página do catálogo
+            Given que o contador do carrinho exibe "1"
+              
+              And clico no botão "Remover" do "Produto A"
+              
+              And o contador do carrinho deve ser atualizado para "0"
+             
+             Then  o botão do "Produto A" deve voltar a exibir "Adicionar ao carrinho"]]></details>
+            </testScript>
+        </testCase>
+        <testCase id="246714627" key="SWDIO-T4">
+            <attachments/>
+            <confluencePageLinks/>
+            <createdBy>Richard Gómez Arcos</createdBy>
+            <createdOn>2025-07-06 03:36:23 UTC</createdOn>
+            <customFields/>
+            <issues/>
+            <labels/>
+            <name><![CDATA[Gestionar múltiples produtos no carrinho]]></name>
+            <owner>712020:c91fa2e2-ae6e-4d25-bb09-48a9d0c43336</owner>
+            <precondition><![CDATA[<ul><li id="isPasted">O usu&aacute;rio est&aacute; na p&aacute;gina do cat&aacute;logo.</li><li>O carrinho de compras est&aacute; inicialmente vazio.</li></ul>]]></precondition>
+            <priority><![CDATA[Normal]]></priority>
+            <status><![CDATA[Draft]]></status>
+            <parameters/>
+            <testDataWrapper/>
+            <testScript type="bdd">
+                <details><![CDATA[Gestionar múltiples produtos no carrinho
+    Clicar em "Adicionar ao carrinho" para o "Produto A"
+    Given Verificar o contador do carrinho.
+
+    And Clicar em "Adicionar ao carrinho" para o "Produto B".
+
+    And Verificar o contador do carrinho.
+
+    And Clicar em "Remover" para o "Produto A".
+
+    And Verificar o contador do carrinho.
+
+    Then O contador exibe "1", o contador exibe "2", o contador exibe "1".]]></details>
+            </testScript>
+        </testCase>
+    </testCases>
+</project>
